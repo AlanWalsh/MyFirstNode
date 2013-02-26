@@ -35,19 +35,32 @@ $fh.ready(function() {
   };
   
     document.getElementById('redButton').onclick = function() {
-      $fh.act(
+    $fh.act(
       {
-        act:'myFunction',
-        req: {
-          num: rand
-        }
-      },
+        act:'redButton'
+       },
       function(res) {
-        document.getElementById('cloudConfig').innerHTML = "<p>" + JSON.stringify(res) + "</p>";
+        document.getElementById('redButton').innerHTML = "<p>" + JSON.stringify(res) + "</p>";
         //alert(res);
       },
       function(err,msg) {
-        document.getElementById('cloudConfig').innerHTML = "<p>ERROR: " + JSON.stringify(msg.error) + "</p>";
+        document.getElementById('redButton').innerHTML = "<p>ERROR: " + JSON.stringify(msg.error) + "</p>";
+        //alert('An error occured: ' + code + ' : ' + errorprops);
+      }
+    );
+  };
+  
+  document.getElementById('greenButton').onclick = function() {
+  $fh.act(
+      {
+        act:'redButton'
+       },
+      function(res) {
+        document.getElementById('greenButton').innerHTML = "<p>" + JSON.stringify(res) + "</p>";
+        //alert(res);
+      },
+      function(err,msg) {
+        document.getElementById('greenButton').innerHTML = "<p>ERROR: " + JSON.stringify(msg.error) + "</p>";
         //alert('An error occured: ' + code + ' : ' + errorprops);
       }
     );
