@@ -6,3 +6,13 @@ exports.myFunction = function(params, callback) {
   callback(undefined, {result: num});
 };
 
+exports.redButton = function(params, callback) {
+
+  callback(undefined, {result: 'red button pressed'});
+};
+
+exports.greenButton = function(params, callback) {
+
+  callback(undefined, {result: 'green button pressed'});
+};
+
